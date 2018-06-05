@@ -44,7 +44,7 @@ public class WeixinImgageArticleReportTask  {
 	 private static final  FastDateFormat dateFormat = FastDateFormat.getInstance("HH:mm:ss");  
 
 	  private static final String DEFAULT_CRON = "0 0 1 * * ?";
-	  private String cron = DEFAULT_CRON;
+	 
 	  
 	  @Autowired
 	  private ThreadPoolTaskScheduler threadPoolTaskScheduler;
@@ -264,8 +264,8 @@ public class WeixinImgageArticleReportTask  {
 	    	return restAPIResult;
 	    }
 	    
+	    private  String cron = "0 0 1 * * ?";
 	    public void setCron(String cron) {
-	    	
 	    	this.cron = cron;
 	    	stopCron();
 	    	future = threadPoolTaskScheduler.schedule(new Runnable() {
